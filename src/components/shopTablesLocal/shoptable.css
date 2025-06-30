@@ -1,0 +1,17 @@
+table {
+	margin: 1em;
+}
+
+table,
+th,
+td {
+	font-size: medium;
+	text-align: left;
+	border: solid black;
+	border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+	background-color: lightblue;
+}
