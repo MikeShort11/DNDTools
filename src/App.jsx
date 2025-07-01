@@ -1,17 +1,17 @@
-import './App.css'
-import ShopTables from "./components/ShopTables";
+import ShopTables from "./components/ShopTables/index";
 
+import './App.css';
 
 
 function App() {
 
   return (
     <>
-      <div class="ShopTables" id="ShopTables">
+      <div className="ShopTables" id="ShopTables">
         <ShopTables />
       </div>
     </>
   )
 }
 
-export default App
+export default App;

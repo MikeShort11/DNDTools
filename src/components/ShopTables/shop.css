@@ -6,12 +6,20 @@ table,
 th,
 td {
 	font-size: medium;
-	text-align: left;
 	border: solid black;
 	border-collapse: collapse;
+	font-size: 16pt;
 }
 
 th {
 	text-align: center;
 	background-color: lightblue;
+}
+
+#item {
+	text-align: left;
+}
+
+#price {
+	text-align: center;
 }

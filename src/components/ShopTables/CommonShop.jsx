@@ -1,5 +1,6 @@
 import React from "react";
-import './shoptable.css'
+import './shop.css';
+import '../../index.css'
 
 function CommonShopTable() {
   const items = {
@@ -38,8 +39,8 @@ function CommonShopTable() {
         <tbody>
           {Object.entries(items).map(([item, price]) => (
             <tr key={item}>
-              <td>{item}</td>
-              <td>{price}</td>
+              <td id="item">{item}</td>
+              <td id="price">{price}</td>
             </tr>
           ))}
         </tbody>
