@@ -1,0 +1,10 @@
+.InitiativeTrackerItem {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+.InitiativeTrackerDetail {
+	border: solid black;
+	background-color: tan;
+	color: black;
+}
