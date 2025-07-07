@@ -3,8 +3,33 @@
 	grid-template-columns: 1fr 2fr 1fr 1fr;
 }
 
+.InitiativeTrackerLabel {
+	border: solid black;
+	background-color: gray;
+	color: black;
+}
+
 .InitiativeTrackerDetail {
 	border: solid black;
 	background-color: tan;
 	color: black;
+	resize: none;
+	font-size: 12pt;
+}
+
+.modal-content {
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.bottomButtons {
+	display: flex;
+	background-color: tan;
+	justify-content: space-evenly;
+}
+
+.bottomButtons>button {
+	background-color: gray;
 }
