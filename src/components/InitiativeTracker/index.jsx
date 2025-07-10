@@ -10,6 +10,7 @@ export default function Tracker() {
 
 	const healthReferance = React.useRef(null);
 
+
 	const addRow = () => setNumRows(numRows + 1);
 	const delRow = () => setNumRows(numRows - 1);
 
@@ -29,18 +30,29 @@ export default function Tracker() {
 		setOpen(true);
 	};
 
-
 	const addHealth = () => {
-		if (healthReferance.current) {
-			const newHealth = parseInt(healthReferance.current.value) || 0;
-			healthReferance.current.value = newHealth + 1;
+		let incrementVal = Number(document.getElementById('incrementNum').value);
+		if (healthReferance.current && !isNaN(incrementVal)) {
+			const health = parseInt(healthReferance.current.value) || 0;
+			healthReferance.current.value = health + incrementVal;
 		}
 	}
 
 	const subHealth = () => {
-		if (healthReferance.current) {
-			const newHealth = parseInt(healthReferance.current.value) || 0;
-			healthReferance.current.value = newHealth - 1;
+		let incrementVal = Number(document.getElementById('incrementNum').value);
+		if (healthReferance.current && !isNaN(incrementVal)) {
+			const health = parseInt(healthReferance.current.value) || 0;
+			healthReferance.current.value = health - incrementVal;
+		}
+	}
+
+	const rollInitiatve = (event) => {
+		const initiativeItem = event.target.closest('.InitiativeTrackerItem'); //gets the div with items
+		const textarea = initiativeItem.querySelector('#InitiativeSlot'); //gets the textArea
+
+		if (textarea) {
+			const d20Roll = Math.floor(Math.random() * 20) + 1;
+			textarea.value = (d20Roll).toString();
 		}
 	}
 
@@ -49,7 +61,10 @@ export default function Tracker() {
 	for (let i = 0; i < numRows; i++) {
 		rows.push(
 			<div className="InitiativeTrackerItem" id="InitiativeItem" key={i}>
-				<textarea className="InitiativeTrackerDetail" id="InitiativeSlot" placeholder="10" />
+				<div className='InitiativeTrackerDetail'>
+					<textarea className='InitiativeTrackerDetail' id="InitiativeSlot" placeholder="10" />
+					<button id="initiativeRollBtn" onClick={rollInitiatve}></button>
+				</div>
 				<textarea className="InitiativeTrackerDetail" id="Name" placeholder="Name" />
 				<textarea
 					className="InitiativeTrackerDetail"
@@ -57,13 +72,13 @@ export default function Tracker() {
 					defaultValue="0"
 					onClick={handleOpen}
 				/>
-				<textarea className="InitiativeTrackerDetail" id="StatusEffects" defaultValue="Effects" />
+				<textarea className="InitiativeTrackerDetail" id="StatusEffects" placeholder="Effects" />
 			</div>
 		)
 	}
 
 	return (
-		<>
+		<div>
 			{/* Label for the Tracker */}
 			<div className="InitiativeTrackerItem" id="InitiativeItem">
 				<div className="InitiativeTrackerLabel" id="InitiativeSlot">Initiative</div>
@@ -92,14 +107,15 @@ export default function Tracker() {
 						left: modalPosition.left
 					}}
 				>
+					<input type='number' defaultValue='1' id='incrementNum'></input>
 					<button onClick={handleClose}>Close</button>
-					<button onClick={addHealth}>+1</button>
-					<button onClick={subHealth}>-1</button>
+					<button onClick={addHealth}>+</button>
+					<button onClick={subHealth}>-</button>
 
 				</div>
 			)}
 
-		</>
+		</div>
 	);
 }
 

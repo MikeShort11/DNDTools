@@ -7,14 +7,22 @@
 	border: solid black;
 	background-color: gray;
 	color: black;
+	font-size: 16pt;
 }
 
 .InitiativeTrackerDetail {
+	display: flex;
 	border: solid black;
 	background-color: tan;
 	color: black;
 	resize: none;
-	font-size: 12pt;
+	font-size: 16pt;
+	font-weight: 400;
+}
+
+.InitiativeTrackerDetail>.InitiativeTrackerDetail {
+	border: none;
+	padding-right: 10px;
 }
 
 .modal-content {
