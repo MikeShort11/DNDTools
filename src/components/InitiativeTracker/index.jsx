@@ -63,7 +63,7 @@ export default function Tracker() {
 			<div className="InitiativeTrackerItem" id="InitiativeItem" key={i}>
 				<div className='InitiativeTrackerDetail'>
 					<textarea className='InitiativeTrackerDetail' id="InitiativeSlot" placeholder="10" />
-					<button id="initiativeRollBtn" onClick={rollInitiatve}></button>
+					<button id="initiativeRollBtn" onClick={rollInitiatve}>Roll</button>
 				</div>
 				<textarea className="InitiativeTrackerDetail" id="Name" placeholder="Name" />
 				<textarea
@@ -94,7 +94,7 @@ export default function Tracker() {
 			<div className="bottomButtons">
 				<button onClick={addRow}>Add Row</button>
 				<button onClick={delRow}>Remove Row</button>
-				<button onClick={addRow}></button>
+				<button onClick={addRow}>sort</button>
 				<button onClick={addRow}></button>
 			</div>
 
@@ -108,10 +108,9 @@ export default function Tracker() {
 					}}
 				>
 					<input type='number' defaultValue='1' id='incrementNum'></input>
-					<button onClick={handleClose}>Close</button>
 					<button onClick={addHealth}>+</button>
 					<button onClick={subHealth}>-</button>
-
+					<button onClick={handleClose}>Close</button>
 				</div>
 			)}
 
